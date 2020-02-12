@@ -5,3 +5,6 @@ class Player:
     def __init__(self, name, current_room):
         self.name = name
         self.current_room = current_room
+
+    def update_room(self, room):
+        self.current_room = room

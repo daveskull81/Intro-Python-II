@@ -1,4 +1,5 @@
 from room import Room
+from player import Player
 
 # Declare all the rooms
 
@@ -37,8 +38,40 @@ room['treasure'].s_to = room['narrow']
 # Main
 #
 
-# Make a new player object that is currently in the 'outside' room.
+def adventure_game():
 
+    player = Player('dAVE', room['outside'])
+
+    print('\nWelcome to Adventure Game!')
+    print('\nAdventure forth at your own peril!\n')
+
+    print(F"You can currently be found:\n\n{player.current_room}\n")
+    print("\nSelect the direction you wish to travel and explore!\n\n")
+
+    while True:
+        direction = input("[n] North  [s] South   [e] East    [w] West [q] Quit\n")
+
+        if direction.lower() == 'n':
+            print('You head North!')
+
+        elif direction.lower() == 's':
+            print('You head South!')
+
+        elif direction.lower() == 'e':
+            print('You head East!')
+
+        elif direction.lower() == 'w':
+            print('You head West!')
+
+        elif direction.lower() == 'q':
+            print('Thanks for playing!')
+            exit()
+        else:
+            print('\nInvalid choice. Make sure to choose the letter for the direction you wish to travel.\n')
+
+if __name__ == '__main__':
+    adventure_game()
+# Make a new player object that is currently in the 'outside' room.
 # Write a loop that:
 #
 # * Prints the current room name

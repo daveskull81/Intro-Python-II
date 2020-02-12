@@ -52,16 +52,32 @@ def adventure_game():
         direction = input("[n] North  [s] South   [e] East    [w] West [q] Quit\n")
 
         if direction.lower() == 'n':
-            print('You head North!')
+            if player.current_room.n_to:
+                player.update_room(player.current_room.n_to)
+                print(F"You now can be found:\n\n{player.current_room}\n")
+            else:
+                print("\nThere is no room there. Try another direction\n")
 
         elif direction.lower() == 's':
-            print('You head South!')
+            if player.current_room.s_to:
+                player.update_room(player.current_room.s_to)
+                print(F"You now can be found:\n\n{player.current_room}\n")
+            else:
+                print("\nThere is no room there. Try another direction\n")
 
         elif direction.lower() == 'e':
-            print('You head East!')
+            if player.current_room.e_to:
+                player.update_room(player.current_room.e_to)
+                print(F"You now can be found:\n\n{player.current_room}\n")
+            else:
+                print("\nThere is no room there. Try another direction\n")
 
         elif direction.lower() == 'w':
-            print('You head West!')
+            if player.current_room.w_to:
+                player.update_room(player.current_room.w_to)
+                print(F"You now can be found:\n\n{player.current_room}\n")
+            else:
+                print("\nThere is no room there. Try another direction\n")
 
         elif direction.lower() == 'q':
             print('Thanks for playing!')

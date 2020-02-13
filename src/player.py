@@ -16,12 +16,12 @@ class Player:
         return True
 
     def list_inventory(self):
-        return self.inventory
+        print(self.inventory)
 
     def remove_item(self, item):
         if item in self.inventory:
             self.inventory.remove(item)
             item.on_drop()
-            return True
+            return item
         else:
             return False

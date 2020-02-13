@@ -16,12 +16,12 @@ class Room:
         return True
     
     def list_items(self):
-        return self.items
+        print(self.items)
 
     def remove_item(self, item):
         if item in self.items:
             self.items.remove(item)
-            return True
+            return item
         else:
             return False
 

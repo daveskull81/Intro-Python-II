@@ -1,5 +1,6 @@
 from room import Room
 from player import Player
+from item import Item
 
 # Declare all the rooms
 
@@ -40,13 +41,14 @@ room['treasure'].s_to = room['narrow']
 
 def adventure_game():
 
-    player = Player('dAVE', room['outside'])
+    print('\nWelcome to Adventure Game!\n')
 
-    print('\nWelcome to Adventure Game!')
-    print('\nAdventure forth at your own peril!\n')
+    player = Player(input('What is your name? '), room['outside'])
+
+    print(F"\nHello, {player.name}! Adventure forth at your own peril!\n")
 
     print(F"You can currently be found:\n\n{player.current_room}\n")
-    print("\nSelect the direction you wish to travel and explore!\n\n")
+    print("\nMake your selections and explore!\n\n")
 
     while True:
         direction = input("[n] North  [s] South   [e] East    [w] West [q] Quit\n")
